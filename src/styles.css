@@ -1,0 +1,309 @@
+/* === General Styles === */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b, #ff00ff, #0099ff);
+    background-size: 300% 300%;
+    animation: gradientBG 6s ease infinite;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  /* === Animated Gradient Background === */
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* === Glassmorphism Container === */
+  .container {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* === 3D Glowing Title === */
+  h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #0099ff, 0 0 20px #0066ff, 0 0 30px #0044ff;
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  /* === Input Field === */
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+  }
+  
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* === Buttons Group (Responsive) === */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  button {
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* === Button Colors === */
+  .add-btn {
+    background: linear-gradient(135deg, #0099ff, #0066ff);
+  }
+  
+  .submit-btn {
+    background: linear-gradient(135deg, #662d91, #8a2be2);
+  }
+  
+  .delete-btn {
+    background: linear-gradient(135deg, #ff1e56, #ff5733);
+  }
+  
+  .edit-btn {
+    background: linear-gradient(135deg, #007fff, #0044ff);
+  }
+  
+  .completed-btn {
+    background: linear-gradient(135deg, #00c851, #007e33);
+  }
+  
+  /* === Button Hover Effects === */
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* === Task List Styling === */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+  }
+  
+  li {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 10px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  /* === Hover Effect for Tasks === */
+  li:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  /* === Completed Task Effect === */
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    background: rgba(0, 200, 81, 0.3);
+    position: relative;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .completed::after {
+    content: "✔ Task Completed 🎉";
+    color: white;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    animation: popUp 0.6s ease-in-out;
+  }
+  
+  /* === Pop-up Animation === */
+  @keyframes popUp {
+    0% { transform: translateY(-10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* === Modal Styles (For Completion Feedback) === */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .modal.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* === Task Date Style === */
+  .task-date {
+    font-size: 0.8rem;
+    color: #ffeb3b;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  /* === Responsive Fixes === */
+  @media (max-width: 600px) {
+    .container {
+      width: 95%;
+    }
+  
+    .button-group {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    flex-wrap: wrap; /* Ensures wrapping if needed */
+}
+
+button {
+    padding: 12px 20px; /* Increased padding */
+    margin: 5px; /* Adds space around buttons */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: rgb(194, 28, 28);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+  /* Dark Mode Colors */
+:root {
+    --bg-light: #ffffff;
+    --text-light: #333;
+    --bg-dark: #121212;
+    --text-dark: #f0f0f0;
+    --button-bg: #007bff;
+    --button-text: white;
+  }
+  
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: 0.3s ease-in-out;
+  }
+  
+  .dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  
+  /* Settings Icon */
+  .settings-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .settings-icon {
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .settings-icon:hover {
+    opacity: 0.7;
+  }
+  
+  /* Settings Menu */
+  .settings-menu {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: var(--bg-light);
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dark-mode .settings-menu {
+    background: var(--bg-dark);
+    border: 1px solid #555;
+  }
+  
+  .settings-menu button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+    transition: 0.3s;
+  }
+  
+  .dark-mode .settings-menu button {
+    color: var(--text-dark);
+  }
+  
+  .settings-menu button:hover {
+    opacity: 0.7;
+  }
+  
