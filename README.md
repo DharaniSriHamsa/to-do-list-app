@@ -36,6 +36,9 @@ screenshots: ----
 
 ![Screenshot 2025-02-26 131740](https://github.com/user-attachments/assets/b19fac20-8be8-436d-a054-c9f066afb1f0)
 
+improved to these
+![Screenshot 2025-02-26 131740](https://github.com/user-attachments/assets/106a077f-ddfa-4de8-b4ad-4128e7406925)
+
 
 ## **🛠️ Installation**  
 
