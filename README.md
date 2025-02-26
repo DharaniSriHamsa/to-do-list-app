@@ -29,7 +29,7 @@ Welcome to the **To-Do List App**! This is a feature-rich task management applic
 
 ## **🌐 Live Demo**  
 
-🔗 **[Live Version](#)** (Add your Netlify/Vercel link here after deployment)  
+🔗 **[Live Version](#)**  
 
 ---
 screenshots: ----
